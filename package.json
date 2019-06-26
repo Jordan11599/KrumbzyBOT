@@ -1,0 +1,14 @@
+{
+  "name": "KrumbzyBOT",
+  "version": "1.0.3",
+  "description": "BOT for Krumbzy's server",
+  "main": "KrumbzyBOT.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan Betts",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
