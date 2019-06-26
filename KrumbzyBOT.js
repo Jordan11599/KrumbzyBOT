@@ -368,6 +368,13 @@ client.on("ready", () =>
       }
     });
 
+    client.on("guildMemberAdd", async member => {
+      let roleNew = member.guild.roles.find(roleNew =>
+      roleNew.name.toLowerCase() === "new")
+      member.addRole(roleNew);
+    })
+  
+
     //client.on('presenceUpdate', (user, newMember) => {
 
       //console.log(user.presence.game.streaming);
