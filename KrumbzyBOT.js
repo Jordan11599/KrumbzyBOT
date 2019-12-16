@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.login("Nicetry");
+client.login("TheDiscordBotToken");
 
 client.on("ready", () => {
   console.log("Bot Online!");
@@ -28,6 +28,23 @@ client.on("ready", () => {
     );
     let emojiName = messageReaction.emoji.name.toLowerCase();
     DRoles(IRoles(messageReaction, emojiName), member);
+  });
+
+  client.on("presenceUpdate", (olds, news) => {
+    //this presenceUpdate will be used to see if the user is streaming not their activity
+    let member = news;
+    let oldPresence = olds.presence.clientStatus.desktop;
+    let newPresence = news.presence.clientStatus.desktop;
+    let role = news.guild.roles.find(role => role.id === "656166343489617980");
+
+    if (newPresence === "online") {
+      member.addRole(role);
+      console.log("Member " + member.user.username + " is now active");
+    }
+    if (oldPresence === "online") {
+      member.removeRole(role);
+      console.log("Member " + member.user.username + " is now inactive");
+    }
   });
 });
 
@@ -86,7 +103,7 @@ function DRoles(role, member) {
     member.removeRole(role);
     console.log("Removed role " + role.name + " to " + member);
   } catch {
-    console.log("error with assigning roles");
+    console.log("error with removing roles");
     return;
   }
 }
