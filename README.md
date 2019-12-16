@@ -1,4 +1,4 @@
-## KrumbzyBOT
+## **KrumbzyBOT**
 
 ***A bot created for twitch.tv/krumbzy***
 > created by mywishywashy
