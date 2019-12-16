@@ -1,6 +1,6 @@
 ## **KrumbzyBOT**
 
-***A bot created for twitch.tv/krumbzy***
+***A discord bot created for twitch.tv/krumbzy***
 > created by mywishywashy
 
 #### Plans for the Future 
